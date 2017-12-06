@@ -23,7 +23,7 @@ public static Noeud rechercheLocale(String text,int taille,int maxIter) throws I
     	DefaultMutableTreeNode new_tete=null,tete=null;
     	ArrayList<String> tabKey=new ArrayList<String>();
     	
-    	while(pourcentage< 50){
+    	while(pourcentage< 80){
     			if(Methode.existe(key,tabKey)) {
     				while(Methode.existe(key,tabKey)) {
     					key=Methode.mutation(key);
@@ -32,7 +32,7 @@ public static Noeud rechercheLocale(String text,int taille,int maxIter) throws I
     				tabKey.add(key);
     			}
     			n=new Noeud(0,key);
-        		float new_pourcentage=Methode.calculPourcentage(n.getCle(),text);
+    			float new_pourcentage=Methode.calculPourcentage(n.getCle(),text);
         		n.setPourcentage(new_pourcentage);
         		if(new_tete!=null) {
         			if(tete!=null) {
@@ -52,8 +52,29 @@ public static Noeud rechercheLocale(String text,int taille,int maxIter) throws I
         		}else {
         			key=Methode.mutation(old_key);
         		}
+        		
         	i++;
+        	
+        	if(i==100) {
+        		System.out.println(tabKey);
+        	}
+        	
+        	if(i==200) {
+        		System.out.println(tabKey);
+        	}
+        	
+        	if(i==500) {
+        		System.out.println(tabKey);
+        	}
+        	if(i==1000) {
+        		System.out.println(tabKey);
+        	}
+        	
+        	if(i==2000) {
+        		System.out.println(tabKey);
+        	}
          }
+    	
     	return gagnant;
     }
 

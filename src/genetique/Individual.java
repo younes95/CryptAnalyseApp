@@ -8,7 +8,7 @@ import java.util.Random;
 import methode.Methode;
 
 public class Individual {
-    public static final int SIZE = 16;
+    public static final int SIZE = 2;
     public char[] genes = new char[SIZE];
     private float fitnessValue;
     

@@ -55,19 +55,7 @@ public class Methode {
         return res;
     }
      
-    
-    //Transforme un mot en tableau de caracteres
-    public static String[] transformText(String text) {
-    	String[] words = text.split("\\s+");
-    	for (int i = 0; i < words.length; i++) {
-    	     words[i] = words[i].replaceAll("[^\\w]", "");
-    	}
-    	return words;
-    }
-   
-    
-   
-    //Calcule le pourcentage de
+  //Calcule le pourcentage d'apparition du texte dans le dictionnaire 
     public static float calculPourcentage(String key,String crypt) throws IOException {
     	
     	String textDecrypt=decrypt(crypt,key.toUpperCase());
@@ -104,9 +92,25 @@ public class Methode {
     }
     
     
+    //Transforme un mot en tableau de caracteres
+    public static String[] transformText(String text) {
+    	String[] words = text.split("\\s+");
+    	for (int i = 0; i < words.length; i++) {
+    	     words[i] = words[i].replaceAll("[^\\w]", "");
+    	}
+    	return words;
+    }
+   
+    
     //Transforme une clé
     public static String mutation(String key) {
-    	int i = (int)Math.floor(Math.random() * (key.length() -1));
+    	int i = 0;
+    	if(key.length()==2) {
+    		i = (int)Math.floor(Math.random() * (key.length()));
+    	}else {
+    		i = (int)Math.floor(Math.random() * (key.length() -1));
+    	}
+    	
     	int nb=(int)Math.floor(Math.random()* 26);
     	
     	char c = (char) (((key.charAt(i) - 'A' + nb) % 26) + 'A');
