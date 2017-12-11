@@ -1,1 +1,3 @@
 # CryptAnalyseApp
+
+This cryptanalyse module contain couple of algorithm which is used for cryptanalyse mthodes such us genetic algo and tabou search and ...
